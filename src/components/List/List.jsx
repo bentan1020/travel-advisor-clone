@@ -10,7 +10,7 @@ const List = ({places}) => {
 
   const classes = useStyles();
   const {type, setType} = useState('restaurants')
-  const {rating, setRating} = useState('restaurants')
+  const {rating, setRating} = useState('restaurants') 
 
   return (
     <div className={classes.container}>
