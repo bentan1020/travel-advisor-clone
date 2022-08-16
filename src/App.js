@@ -39,6 +39,7 @@ const App = () => {
       <Header/>
       <Grid container spacing={3} style={{width:'100%'}}>
 
+        {/* full width is size 12, small screen takes up 12, medium screen takes up 4 for the left side list*/}
         <Grid item xs={12} md={4}>
           <List places={places} />
         </Grid>
