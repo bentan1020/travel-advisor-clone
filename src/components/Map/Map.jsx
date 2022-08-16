@@ -25,12 +25,11 @@ const Map = ({ setCoordinates, setBounds, coordinates, places}) => {
           margin={[50,50,50,50]}
           options={''}
           onChange={(e) => {
-            console.log(e);
-
             setCoordinates({ lat:e.center.lat, lng:e.center.lng })
             setBounds({ ne:e.marginBounds.ne, sw:e.marginBounds.sw })
           }}
           onChildClick = {''}>
+            
             {places?.map((place, i) => (
               <div 
                 className={classes.markerContainer} 
@@ -47,16 +46,18 @@ const Map = ({ setCoordinates, setBounds, coordinates, places}) => {
                         <Typography className={classes.Typography} variant= "subtitle2" gutterBottom>
                           {places.name}
                         </Typography>
+
                         <img 
                           className={classes.pointer}
                           src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
                           alt={place.name} />
+
                       </Paper>
                     )
                   }
-
               </div>
             ))}
+
         </GoogleMapReact>
 
       </div>
