@@ -18,14 +18,14 @@ const List = ({ places, childClicked, isLoading }) => {
   const classes = useStyles();
   const { type, setType } = useState("restaurants");
   const { rating, setRating } = useState("");
-  const [elRefs, setElRef] = useState([]);
+  const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
     const refs = Array(places?.length)
       .fill()
       .map((_, i) => elRefs[i] || createRef());
 
-    setElRef(refs);
+    setElRefs(refs);
   }, [places]);
 
   return (
@@ -65,7 +65,7 @@ const List = ({ places, childClicked, isLoading }) => {
               <Grid item key={i} xs={12}>
                 <PlaceDetails
                   place={place}
-                  selected={Number(childClicked) == i}
+                  selected={Number(childClicked) === i}
                   refProp={elRefs[i]}
                 ></PlaceDetails>
               </Grid>
