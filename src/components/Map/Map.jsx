@@ -9,7 +9,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 import useStyles from "./styles"
 
-const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked}) => {
+const Map = ({ setCoordinates, setBounds, coordinates, places}) => {
 
   const classes = useStyles();
   const isDesktop = useMediaQuery('(min-width:600px)');
@@ -28,7 +28,7 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked})
             setCoordinates({ lat:e.center.lat, lng:e.center.lng })
             setBounds({ ne:e.marginBounds.ne, sw:e.marginBounds.sw })
           }}
-          onChildClick = {(child) => setChildClicked(child)} >
+          onChildClick = {''}>
             
             {places?.map((place, i) => (
               <div 

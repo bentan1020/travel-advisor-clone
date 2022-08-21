@@ -7,11 +7,9 @@ import Rating from '@material-ui/lab/Rating'
 
 import useStyles from './styles'
 
-const PlaceDetails = ({place, selected, refProp}) => {
+const PlaceDetails = ({place}) => {
 
   const classes = useStyles();
-
-  if(selected) refProp?.current?.scollIntoView({ behavior:"smooth", block: "start"})
 
   return (
     <Card elevation={6}>
